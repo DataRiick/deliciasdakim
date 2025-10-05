@@ -1,0 +1,170 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #578181;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  background-color: oklab(97.429% 0.00111 0.02222);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+header .logo img {
+  height: 100px;
+}
+
+/* Contato */
+header .contato a {
+  display: flex;
+  align-items: center;
+  color: rgb(10, 10, 10);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+header .contato a img {
+  width: 30px;
+  margin-right: 8px;
+  transition: transform 0.3s;
+}
+
+header .contato a:hover img {
+  transform: scale(1.1);
+}
+
+/* Cardápio */
+.cardapio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.categoria {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  flex: 1 1 300px;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.categoria:hover {
+  transform: translateY(-3px);
+}
+
+.categoria h2 {
+  text-align: center;
+  color: #e69057;
+}
+
+/* Itens */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #44a0b1;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.item .info {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.item h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.item p {
+  font-size: 13px;
+  margin: 2px 0 0;
+  color: #666;
+}
+
+.preco {
+  font-weight: bold;
+  color: #e69057;
+  font-size: 16px;
+}
+
+/* === MODAL (Imagem Ampliada) === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+  animation: zoom 0.3s ease;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+@keyframes zoom {
+  from {transform: scale(0.7);}
+  to {transform: scale(1);}
+}
+
+/* Botão Fechar */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ccc;
+}
